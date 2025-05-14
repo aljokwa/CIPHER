@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const puzzleArea = document.getElementById('puzzle-area');
     const narrativeArea = document.getElementById('narrative-area');
+    const backgroundSong = document.getElementById('background-song');
+    const startScreen = document.getElementById('start-screen');
+    const startButton = document.getElementById('start-button');
+    const gameContainer = document.getElementById('game-container');
 
     // --- Game State ---
     let currentPuzzleIndex = 0;
@@ -74,5 +78,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    initGame();
+    // --- Start Button Logic ---
+    if (startButton && startScreen && gameContainer && backgroundSong) {
+        startButton.addEventListener('click', () => {
+            // Attempt to play the song
+            backgroundSong.play().then(() => {
+                console.log('Background song started.');
+            }).catch(error => {
+                console.error('Error playing background song:', error);
+                // You could display a message to the user here if audio playback fails
+            });
+
+            // Hide start screen and show game container
+            startScreen.style.display = 'none';
+            gameContainer.style.display = 'block';
+
+            // Initialize the game (loads the first puzzle)
+            initGame();
+        });
+    } else {
+        console.error('Start button, start screen, game container or background song element not found. Game may not start correctly.');
+        // Fallback to init game if start elements are missing, though this might not be desired without user interaction for audio.
+        // initGame(); 
+    }
+
+    // initGame(); // Game initialization is now triggered by the start button
 }); 

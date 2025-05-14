@@ -12,7 +12,11 @@
         Your browser does not support the video tag.
     </video>
 
-    <div id="game-container">
+    <div id="start-screen">
+        <button id="start-button">Start Cipher Hunt</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
         <header>
             <h1>Cipher Hunter: The Montana Code</h1>
         </header>
@@ -28,7 +32,7 @@
         </footer>
     </div>
 
-    <audio autoplay loop id="background-song">
+    <audio loop id="background-song">
         <source src="assets/song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
