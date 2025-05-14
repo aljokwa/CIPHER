@@ -1,0 +1,142 @@
+body {
+    font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+    /* background-color: #f5f5f5; */ /* Commented out to allow video background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Hide scrollbars that might appear due to video */
+    /* Placeholder for wilderness background - you can uncomment and set this later */
+    /* background-image: url('assets/wilderness.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Ensure it's behind everything */
+    background-size: cover;
+    /* Optional: add a dark overlay if video is too bright */
+    /* filter: brightness(0.7); */ 
+}
+
+#game-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent paper to see video */
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+    z-index: 10; /* Ensure game container is above the video */
+    position: relative; /* Needed for z-index to work reliably */
+    /* Placeholder for paper texture background */
+    /* background-image: url('assets/paper_texture.png'); */
+}
+
+header h1 {
+    color: #2c3e50;
+    border-bottom: 2px dashed #333;
+    padding-bottom: 10px;
+}
+
+#puzzle-area {
+    min-height: 200px;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa; /* Slightly different paper shade */
+}
+
+#narrative-area {
+    margin-top: 20px;
+    padding: 10px;
+    font-style: italic;
+    color: #555;
+    border-top: 1px solid #eee;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Basic styling for interactive elements - to be expanded */
+.clickable {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid transparent; /* Hidden border, shown on hover/focus */
+}
+
+.clickable:hover, .clickable:focus {
+    border-color: #aaa;
+    background-color: #e0e0e0;
+}
+
+/* Puzzle specific styles */
+.cipher-text {
+    font-family: 'Consolas', 'Monaco', monospace; /* More digital/code-like font */
+    font-size: 1.2em;
+    color: #d9534f; /* A warning red color */
+    background-color: #f9f2f4;
+    padding: 15px;
+    border: 1px dashed #d9534f;
+    margin: 15px 0;
+    letter-spacing: 2px; /* Make letters stand out a bit */
+    text-align: left;
+    white-space: pre-wrap; /* Preserve whitespace and newlines if any */
+}
+
+#solution-input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#submit-solution {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#submit-solution:hover {
+    background-color: #4cae4c;
+}
+
+.hint {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Narrative message styling */
+.success {
+    color: #3c763d; /* Green for success */
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.error {
+    color: #a94442; /* Red for error/incorrect */
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    margin-top: 10px;
+} 
